@@ -23,6 +23,8 @@ rag = text_RAG("your-api-key", "path/to/your/text/file.txt")
 answer = rag.user_ask("What is this text talking about?")
 print(answer)
 
+- ## Usage
+
 ### RDF_RAG
 
 The PDF_RAG class is designed for processing plain text documents:
