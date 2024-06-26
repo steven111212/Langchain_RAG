@@ -4,8 +4,16 @@ This project implements two types of Retrieval-Augmented Generation (RAG) system
 
 ## Features
 
-- text_RAG: A RAG system for plain text documents
-- PDF_RAG: An advanced RAG system capable of processing PDF documents, including text, tables, and images
+1. text_RAG: 
+   - Processes plain text documents
+   - Uses FAISS for efficient text retrieval
+   - Employs OpenAI's language models for question answering
+
+2. PDF_RAG:
+   - Processes PDF documents, including text, tables, and images
+   - Extracts and analyzes images from PDFs
+   - Handles table structures in PDFs
+   - Provides more comprehensive analysis of complex documents
 
 - ## Usage
 
@@ -22,20 +30,26 @@ rag = text_RAG("your-api-key", "path/to/your/text/file.txt")
 # Ask a question
 answer = rag.user_ask("What is this text talking about?")
 print(answer)
+```
+### PDF_RAG
 
-- ## Usage
-
-### RDF_RAG
-
-The PDF_RAG class is designed for processing plain text documents:
+For processing PDF documents:
 
 ```python
 from pdf_rag import PDF_RAG
 
-# Initialize the PDF_RAG system  
-rag = PDF_RAG("your-api-key", "path/to/your/pdf/file.pdf")
+# Initialize PDF_RAG
+pdf_rag = PDF_RAG("your-api-key", "path/to/your/pdf/file.pdf", 
+                  infer_table_structure=True, extract_images_in_pdf=True)
 
 # Ask a question
-answer, relevant_images = rag.user_ask("What is the main topic of this PDF?")
+answer, relevant_images = pdf_rag.user_ask("What is the main topic of this PDF?")
 print(answer)
-# The relevant_images variable will contain any images related to the answer
+
+# If you want to see information about relevant images
+for i, image in enumerate(relevant_images):
+    print(f"Relevant image {i + 1}: {image}")
+```
+
+
+
