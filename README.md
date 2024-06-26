@@ -2,6 +2,10 @@
 
 This project implements two types of Retrieval-Augmented Generation (RAG) systems: text_RAG and PDF_RAG. These systems are designed to enhance question-answering capabilities by leveraging large language models and efficient information retrieval techniques.
 
+## System Architecture
+
+![RAG System Architecture](images/rag_system_architecture.png)
+
 ## Features
 
 1. text_RAG: 
