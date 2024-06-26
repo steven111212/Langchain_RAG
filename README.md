@@ -4,7 +4,7 @@ This project implements two types of Retrieval-Augmented Generation (RAG) system
 
 ## System Architecture
 
-![RAG System Architecture](images/rag_system_architecture.png)
+![RAG System Architecture](image/rag_system_architecture.png)
 
 ## Features
 
